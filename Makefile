@@ -14,7 +14,6 @@ windows:
 	@echo "build for windows gui"
 	@rm -f ./${BINARY}.exe
 	@CGO_ENABLED=1 GOOS=windows GOARCH=amd64 CC=${WIN_CC} CXX=${WIN_CXX} go build -o ${BINARY}.exe -ldflags ${WIN_LD_FLAGS} cmd/*.go
-	@upx ./${BINARY}.exe
 
 clean:
 	@echo "clean binary"
